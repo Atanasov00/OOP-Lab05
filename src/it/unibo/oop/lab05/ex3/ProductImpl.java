@@ -1,6 +1,6 @@
 package it.unibo.oop.lab05.ex3;
 
-public class ProductImpl implements Product {
+public class ProductImpl implements Product, Comparable<Product> {
 	
 	private final String name;
 	private final double quantity;
@@ -18,6 +18,11 @@ public class ProductImpl implements Product {
 	@Override
 	public double getQuantity() {
 		return this.quantity;
+	}
+
+	@Override
+	public int compareTo(Product o) {
+		return 0;
 	}
 
 }
