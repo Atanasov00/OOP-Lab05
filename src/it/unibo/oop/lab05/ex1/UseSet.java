@@ -19,28 +19,17 @@ public final class UseSet {
      *            ignored
      */
     public static void main(final String[] args) {
-        /*
-         * Considering the content of "UseCollection, write a program which, in
-         * order:
-         * 
-         * 1) Builds a TreeSet containing Strings
-         * 
-         * 2) Populates such Collection with all the Strings ranging from "1" to
-         * "20"
-         * 
-         * 3) Prints its content
-         * 
-         * 4) Removes all those strings whose represented number is divisible by
-         * three
-         * 
-         * 5) Prints the content of the Set using a for-each costruct
-         * 
-         * 6) Verifies if all the numbers left in the set are even
-         */
     	final int DIVISIBLE_NUMBER = 3;
+    	final int LAST_NUMBER = 20;
+    	final int FIRST_NUMBER = 1;
+    	/*1) Builds a TreeSet containing Strings*/
     	final Collection<String> collString = new TreeSet<>();
-    	collString.addAll(Arrays.asList("1", "2", "3", "4", "5","6", "7", "8", "9", 
-    			"10","11", "12", "13", "14", "15","16", "17", "18", "19", "20"));
+    	/*2) Populates such Collection with all the Strings ranging from "1" to "20"*/
+    	//collString.addAll(Arrays.asList("2", "4", "6"));
+    	for(int i = FIRST_NUMBER; i <= LAST_NUMBER; i++) {
+    		collString.add(Integer.toString(i));
+    	}
+    	/*3) Prints its content*/
     	System.out.println(collString);
     	/*for(String s: collString) {
     		if((Integer.parseInt(s) % DIVISIBLE_NUMBER) == 0) {
@@ -48,20 +37,22 @@ public final class UseSet {
     		}
     	}*/
     	var iterator = collString.iterator();
+    	/*4) Removes all those strings whose represented number is divisible by three*/
     	while (iterator.hasNext()) {
     		if((Integer.parseInt(iterator.next()) % DIVISIBLE_NUMBER) == 0){
     			iterator.remove();
     		}
     	}
-    	
+    	/*5) Prints the content of the Set using a for-each costruct*/
     	for(String s: collString) {
-    			System.out.print(s + "|");
+    			System.out.print("|" + s);
     	}
     	
     	int cont = 0;
+    	/*6) Verifies if all the numbers left in the set are even*/
 	    for(String s: collString) {
 			if((Integer.parseInt(s) % 2) != 0) {
-				System.out.println("\nNon tutti i numeri all'interno del set sono pari.");
+				System.out.println("|\nNon tutti i numeri all'interno del set sono pari.");
 				break;
 			}
 			else {
@@ -70,7 +61,7 @@ public final class UseSet {
 		}
 	    
 	    if(cont == collString.size()) {
-	    	System.out.println("Tutti i numeri all'interno del set sono pari.");
+	    	System.out.println("|\nTutti i numeri all'interno del set sono pari.");
 	    }
     }
 }
