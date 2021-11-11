@@ -18,8 +18,11 @@ public class WarehouseImpl implements Warehouse {
 
 	@Override
 	public Set<String> allNames() {
-		// TODO Auto-generated method stub
-		return null;
+		var names = new TreeSet<String>();
+		for(Product s: this.set) {
+			names.add(s.getName());
+		}
+		return names;
 	}
 
 	@Override
@@ -34,8 +37,12 @@ public class WarehouseImpl implements Warehouse {
 
 	@Override
 	public double getQuantity(String name) {
-		// TODO Auto-generated method stub
-		return 0;
+		for(Product p: set) {
+			if(p.getName().equals(name)) {
+				return p.getQuantity();
+			}
+		}
+		return -1;
 	}
 
 }
