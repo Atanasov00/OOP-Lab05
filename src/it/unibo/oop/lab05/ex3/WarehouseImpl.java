@@ -1,5 +1,6 @@
 package it.unibo.oop.lab05.ex3;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -18,7 +19,7 @@ public class WarehouseImpl implements Warehouse {
 
 	@Override
 	public Set<String> allNames() {
-		var names = new TreeSet<String>();
+		var names = new LinkedHashSet<String>();
 		for(Product s: this.set) {
 			names.add(s.getName());
 		}
@@ -27,7 +28,7 @@ public class WarehouseImpl implements Warehouse {
 
 	@Override
 	public Set<Product> allProducts() {
-		return new TreeSet<Product>(set);
+		return new LinkedHashSet<Product>(set);
 	}
 
 	@Override
