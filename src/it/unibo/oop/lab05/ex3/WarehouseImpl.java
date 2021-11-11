@@ -2,14 +2,13 @@ package it.unibo.oop.lab05.ex3;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class WarehouseImpl implements Warehouse {
 	
 	private final Set<Product> set;
 	
 	public WarehouseImpl() {
-		set = new TreeSet<>();
+		set = new LinkedHashSet<>();
 	}
 	
 	@Override
