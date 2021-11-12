@@ -64,7 +64,6 @@ public final class Utilities {
     public static <X> Set<X> setSymmetricDifference(final Set<? extends X> setA, final Set<? extends X> setB) {
     	Set<X> set = new TreeSet<>(setA);
     	set.addAll(setB);
-    	
     	for(X b: setB) {
     		for(X a: setA) {
     			if(b.equals(a)) {
@@ -72,7 +71,6 @@ public final class Utilities {
     			}
     		}
     	}
-    	
         return set;
     }
 
