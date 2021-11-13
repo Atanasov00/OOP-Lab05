@@ -25,8 +25,7 @@ public final class Utilities {
      * @return a new set that is the union of the input sets.
      */
     public static <X> Set<X> setUnion(final Set<? extends X> setA, final Set<? extends X> setB) {
-    	Set<X> set = new TreeSet<>();
-    	set.addAll(setA);
+    	Set<X> set = new TreeSet<>(setA);
     	set.addAll(setB);
         return set;
     }
@@ -46,6 +45,7 @@ public final class Utilities {
     		for(X b: setB) {
     			if(a.equals(b)) {
     				set.add(a);
+    				break;
     			}
     		}
     	}
@@ -68,6 +68,7 @@ public final class Utilities {
     		for(X a: setA) {
     			if(b.equals(a)) {
     				set.remove(b);
+    				break;
     			}
     		}
     	}
@@ -84,8 +85,7 @@ public final class Utilities {
      */
     public static <X> X getRandomElement(final Collection<X> coll) {
     	List<X> list = new ArrayList<>(coll);
-    	Random ran = new Random();
-        return list.get(ran.nextInt(list.size()));
+        return list.get(new Random().nextInt(list.size()));
     }
 
     /**
@@ -100,11 +100,10 @@ public final class Utilities {
      * @return a pair with two random elements
      */
     public static <X, Y> Pair<X, Y> getRandomPair(final Collection<X> first, final Collection<Y> second) {
-    	Random ran = new Random();
     	List<X> listX = new ArrayList<>(first);
     	List<Y> listY = new ArrayList<>(second);
-    	X firstE = listX.get(ran.nextInt(listX.size()));
-    	Y secondE = listY.get(ran.nextInt(listY.size()));
+    	X firstE = listX.get(new Random().nextInt(listX.size()));
+    	Y secondE = listY.get(new Random().nextInt(listY.size()));
         return new Pair<X, Y>(firstE, secondE);
     }
 }
