@@ -1,6 +1,5 @@
 package it.unibo.oop.lab05.ex1;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Set;
 import java.util.TreeSet;
