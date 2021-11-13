@@ -2,7 +2,6 @@ package it.unibo.oop.lab05.ex5;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
